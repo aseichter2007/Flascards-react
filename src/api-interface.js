@@ -1,13 +1,13 @@
 import axios from 'axios';
 function ApiGetCollection(){
-    var url = "https://localhost:44393/api/collections";
-    var response = axios.Get(url); 
+    let url = "https://localhost:44393/api/collections";
+    let response = axios.Get(url); 
     return response;
 }
 function ApiPostCard( stack, newWord, newDefinition ){
-    var url = "https://localhost:44393/api/card";
+    let url = "https://localhost:44393/api/card";
     var postResponse;
-    var data = {
+    let data = {
         stackId: stack,
         word: newWord,
         definition: newDefinition
@@ -22,8 +22,8 @@ function ApiPostCard( stack, newWord, newDefinition ){
     return postResponse;
 }
 function ApiPutCard(cardId, newWord, newDefinition){
-    var url = "https://localhost:44393/api/card";
-    var data = {
+    let url = "https://localhost:44393/api/card";
+    let data = {
         id: cardId,
         word: newWord,
         definition: newDefinition
@@ -36,7 +36,7 @@ function ApiPutCard(cardId, newWord, newDefinition){
     });
 }
 function ApiDeleteCard(cardId){
-    var url = "https://localhost:44393/api/card/"+cardId;
+    let url = "https://localhost:44393/api/card/"+cardId;
     axios.delete(url).then(function (response) {
         console.log(response);
         })
@@ -45,8 +45,8 @@ function ApiDeleteCard(cardId){
     });
 }
 function ApiPostStack(newTitle){
-    var url = "https://localhost:44393/api/stack";
-    var data = {
+    let url = "https://localhost:44393/api/stack";
+    let data = {
         title: newTitle
     }
     var postResponse;
@@ -60,8 +60,8 @@ function ApiPostStack(newTitle){
     return postResponse;
 }
 function ApiPutStack(stackId, newTitle){
-    var url = "https://localhost:44393/api/stack";
-    var data = {
+    let url = "https://localhost:44393/api/stack";
+    let data = {
         id: stackId,
         title: newTitle   
     }
@@ -73,7 +73,7 @@ function ApiPutStack(stackId, newTitle){
     });
 }
 function ApiDeleteStack(stackId){
-    var url = "https://localhost:44393/api/stack/" + stackId;
+    let url = "https://localhost:44393/api/stack/" + stackId;
     axios.delete(url).then(function (response) {
         console.log(response);
         })
